@@ -634,9 +634,9 @@ To get started in your own environment:
     - `./data/S1B_IW_GRDH_1SDV_20211118T025212_20211118T025237_029636_03896D_FCBE.SAFE`
     - `./data/S1B_IW_GRDH_1SDV_20211106T025212_20211106T025237_029461_03840B_6E73.SAFE`
 
-2.  Collect a directory of trained Senntinel-1 model artifacts on your machine. At minimum,
+2.  Collect a directory of trained Sentinel-1 model artifacts on your machine. At minimum,
     you will need one set of trained weights and model config for the detection model and one set for the attribute prediction model.
-    You can obtain these directories by training the models yourselves, or by using pre-trained weights found in data/model_artifacts.
+    You can obtain these directories by training the models yourselves, or by using pre-trained weights found in data/model_artifacts. Note that these weights are large and stored on git via git-lfs. By default, cloning this repo will not automatically download these weights. You must install [git-lfs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage). If you have already cloned this repository, you can install git-lfs, then run `git lfs fetch` to download the model weights.
 
         For example, let's suppose we're using the pre-trained Sentinel-1 artifacts distributed separately, and
         we've copied the following directory structure with these artifacts into the `./data` folder of this repo:
