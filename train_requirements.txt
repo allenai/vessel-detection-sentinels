@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cu113
+wheel
+torch==1.13.0
+torchvision==0.14.0
+numpy==1.23.0
+gdal==3.4.3
+google-cloud==0.34.0
+google-cloud-storage==2.5.0
+mapcalc==0.2.2
+pandas==1.4.3
+scikit-image==0.19.3
+python-dateutil==2.8.2
+scikit-learn==1.1.2
+sentinelsat==1.1.1
+landsatxplore==0.13.0
+wandb==0.13.3

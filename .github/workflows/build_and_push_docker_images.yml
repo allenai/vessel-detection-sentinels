@@ -1,0 +1,104 @@
+name: build_and_push_docker_images
+
+on:
+  push:
+
+env:
+  GHCR: ghcr.io
+  GHCR_IMAGE_NAME: ${{ github.repository }}
+  GCR: gcr.io
+  GCR_IMAGE_NAME: skylight-docker-images/gh-actions/${{ github.repository }}/${{ github.ref_name }}
+
+jobs:
+  build-and-push-image-ghcr-vessel-detection-download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract GHCR metadata (tags, labels) for Docker vessel-detection-download
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.GHCR }}/${{ env.GHCR_IMAGE_NAME }}/vessel-detection-download
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: Build and push Docker image vessel-detection-download to GHCR
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: docker/downloader.dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  build-and-push-image-ghcr-vessel-detection-train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract GHCR metadata (tags, labels) for Docker vessel-detection-train
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.GHCR }}/${{ env.GHCR_IMAGE_NAME }}/vessel-detection-train
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: Build and push Docker image vessel-detection-train to GHCR
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: docker/train.dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  build-and-push-image-ghcr-vessel-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract GHCR metadata (tags, labels) for Docker vessel-detection
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.GHCR }}/${{ env.GHCR_IMAGE_NAME }}/vessel-detection
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: Build and push Docker image vessel-detection to GHCR
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: docker/inference.dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}

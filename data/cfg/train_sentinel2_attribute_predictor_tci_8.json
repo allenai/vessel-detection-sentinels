@@ -1,0 +1,57 @@
+{
+    "DatasetID": 4,
+    "Name": "attr",
+    "Architecture": "custom",
+    "Channels": [
+        {
+            "Name": "tci",
+            "Count": 3
+        },
+        {
+            "Name": "b08",
+            "Count": 1
+        }
+    ],
+    "Options": {
+        "BatchSize": 16,
+        "ChipSize": 0,
+        "ImageSize": 0,
+        "Optimizer": {
+            "Name": "adam",
+            "InitialLR": 0.0001
+        },
+        "Evaluator": "loss",
+        "NumberEpochs": 160,
+        "Scheduler": {
+            "Name": "plateau",
+            "Patience": 2,
+            "Factor": 0.5
+        },
+        "SummaryFrequency": 8192,
+        "TrainSplits": [
+            "sentinel2-attrs-train"
+        ],
+        "TrainTransforms": [
+            {
+                "Name": "CropFlip",
+                "HorizontalFlip": false,
+                "VerticalFlip": false,
+                "CropTo": 120
+            }
+        ],
+        "ValTransforms": [
+            {
+                "Name": "CropFlip",
+                "HorizontalFlip": false,
+                "VerticalFlip": false,
+                "CropTo": 120
+            }
+        ],
+        "ValSplits": [
+            "sentinel2-attrs-val"
+        ],
+        "TestSplits": [
+            "sentinel2-attrs-test"
+        ]
+    }
+}

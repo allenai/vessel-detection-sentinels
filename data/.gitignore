@@ -1,0 +1,10 @@
+*
+!cfg
+!cfg/*
+!example_output
+!example_output/**
+!reports
+!reports/*.ipynb
+!metadata.sqlite3
+!infra_detections.csv
+!.gitignore
