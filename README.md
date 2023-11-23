@@ -1133,3 +1133,4 @@ Running the inference script will produce at most three types of artifact in the
 1. Skylight-ML (especially Mike Gartner who wrote most of this codebase
 2. PRIOR at AI2 (especially Favyen Bastani and Piper Wolters) contributed considerable expertise to the foundational architectures of both models
 3. European Space Agency for making Sentinel-1 and Sentinel-2 data available to the public.
+4. The [Defense Innovation Unit](https://www.diu.mil/) (DIU) who built the foundation for this work through [xView3](https://iuu.xview.us/). 
