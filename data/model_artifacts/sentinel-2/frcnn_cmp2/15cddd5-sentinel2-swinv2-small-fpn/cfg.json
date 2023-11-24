@@ -1,1 +1,72 @@
-{"DatasetID": 3, "Name": "frcnn_cmp2", "Architecture": "frcnn_cmp2", "Channels": [{"Name": "tci", "Count": 3}, {"Name": "tci_overlap0", "Count": 3}, {"Name": "tci_overlap1", "Count": 3}], "Options": {"BatchSize": 3, "ChipSize": 0, "EffectiveBatchSize": 3, "ImageSize": 1024, "NumberEpochs": 15, "Optimizer": {"Name": "adam", "InitialLR": 0.0001}, "Scheduler": {"Name": "plateau", "Patience": 2, "Factor": 0.5, "Cooldown": 10, "MinLR": 1e-06}, "SummaryFrequency": 2048, "TrainSplits": ["split2", "split3", "split4", "split5", "split6", "train", "train-bg", "train2", "train3"], "TrainTransforms": [{"Name": "CropFlip", "HorizontalFlip": true, "VerticalFlip": true, "CropTo": 512}], "ValSplits": ["split1"], "TestSplits": ["split7"], "Evaluator": "per_class_f1", "EncoderBackbone": "swintransformer", "EncodeBackboneUseFPN": "true", "EncoderBackboneVariant": "small", "GroupChannels": 3}, "Data": {"task": "point", "categories": "[\"vessel\"]"}}
+{
+  "Architecture": "frcnn_cmp2",
+  "Channels": [
+    {
+      "Count": 3,
+      "Name": "tci"
+    },
+    {
+      "Count": 3,
+      "Name": "tci_overlap0"
+    },
+    {
+      "Count": 3,
+      "Name": "tci_overlap1"
+    }
+  ],
+  "Data": {
+    "categories": "[\"vessel\"]",
+    "task": "point"
+  },
+  "DatasetID": 3,
+  "Name": "frcnn_cmp2",
+  "Options": {
+    "BatchSize": 3,
+    "ChipSize": 0,
+    "EffectiveBatchSize": 3,
+    "EncodeBackboneUseFPN": "true",
+    "EncoderBackbone": "swintransformer",
+    "EncoderBackboneVariant": "small",
+    "Evaluator": "per_class_f1",
+    "GroupChannels": 3,
+    "ImageSize": 1024,
+    "NumberEpochs": 15,
+    "Optimizer": {
+      "InitialLR": 0.0001,
+      "Name": "adam"
+    },
+    "Scheduler": {
+      "Cooldown": 10,
+      "Factor": 0.5,
+      "MinLR": 1e-06,
+      "Name": "plateau",
+      "Patience": 2
+    },
+    "SummaryFrequency": 2048,
+    "TestSplits": [
+      "split7"
+    ],
+    "TrainSplits": [
+      "split2",
+      "split3",
+      "split4",
+      "split5",
+      "split6",
+      "train",
+      "train-bg",
+      "train2",
+      "train3"
+    ],
+    "TrainTransforms": [
+      {
+        "CropTo": 512,
+        "HorizontalFlip": true,
+        "Name": "CropFlip",
+        "VerticalFlip": true
+      }
+    ],
+    "ValSplits": [
+      "split1"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "Architecture": "frcnn_cmp2",
+  "Channels": [
+    {
+      "Count": 1,
+      "Name": "vh"
+    },
+    {
+      "Count": 1,
+      "Name": "vv"
+    },
+    {
+      "Count": 1,
+      "Name": "vh_overlap0"
+    },
+    {
+      "Count": 1,
+      "Name": "vv_overlap0"
+    },
+    {
+      "Count": 1,
+      "Name": "vh_overlap1"
+    },
+    {
+      "Count": 1,
+      "Name": "vv_overlap1"
+    }
+  ],
+  "Data": {
+    "categories": "[\"vessel\"]",
+    "task": "point"
+  },
+  "DatasetID": 1,
+  "Name": "frcnn_cmp2",
+  "Options": {
+    "AggregateOp": "max",
+    "BatchSize": 8,
+    "ChipSize": 0,
+    "EffectiveBatchSize": 32,
+    "Evaluator": "per_class_f1",
+    "GroupChannels": 2,
+    "ImageSize": 800,
+    "NumberEpochs": 3,
+    "Optimizer": {
+      "InitialLR": 0.0001,
+      "Name": "adam"
+    },
+    "Scheduler": {
+      "Factor": 0.5,
+      "Name": "plateau",
+      "Patience": 2
+    },
+    "SummaryFrequency": 2048,
+    "TrainSplits": [
+      "jan-march-may-2022-point-train",
+      "jun-july-aug-2022-point-train",
+      "apr-2022-point-train",
+      "nov-2021-point-train",
+      "jun-2020-point-train"
+    ],
+    "TrainTransforms": [
+      {
+        "CropTo": 768,
+        "HorizontalFlip": true,
+        "Name": "CropFlip",
+        "VerticalFlip": true
+      }
+    ],
+    "ValSplits": [
+      "jan-march-may-2022-point-val",
+      "jun-july-aug-2022-point-val",
+      "apr-2022-point-val",
+      "nov-2021-point-val",
+      "jun-2020-point-val"
+    ]
+  }
+}

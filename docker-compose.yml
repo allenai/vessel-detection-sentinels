@@ -1,9 +1,9 @@
 version: "3.9"
 services:
   test:
-    hostname: sentinel-detection-test
-    entrypoint: ./docker/test_entrypoint.sh
+    hostname: svd-test
+
     build:
       context: .
-      dockerfile: docker/inference.dockerfile
+      dockerfile: Dockerfile
     stdin_open: true
