@@ -51,14 +51,12 @@ jobs:
         with:
           lfs: true
 
-      - name: Authenticate to Google Cloud
-        id: auth
-        uses: google-github-actions/auth@v1
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
         with:
-          credentials_json: "${{ secrets.ENCODED_GCR_KEY }}"
-
-      - name: Configure Docker
-        run: gcloud auth configure-docker
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract GCR metadata (tags, labels) for Docker vessel-detection
         id: meta
