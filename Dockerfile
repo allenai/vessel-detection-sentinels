@@ -29,7 +29,6 @@ RUN pip install --no-cache-dir -r /home/vessel_detection/requirements.txt
 # Set Working Directory and Prepare App
 WORKDIR /home/vessel_detection/src
 COPY src /home/vessel_detection/src
-COPY main.py /home/vessel_detection/main.py
 COPY tests /home/vessel_detection/src/
 RUN mkdir -p /root/.cache/torch/hub/checkpoints/
 COPY torch_weights/swin_v2_s-637d8ceb.pth /root/.cache/torch/hub/checkpoints/swin_v2_s-637d8ceb.pth
