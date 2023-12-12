@@ -27,7 +27,7 @@ COPY requirements.txt /home/vessel_detection/requirements.txt
 RUN pip install --no-cache-dir -r /home/vessel_detection/requirements.txt
 
 # Set Working Directory and Prepare App
-WORKDIR /home/vessel_detection/
+WORKDIR /home/vessel_detection/src
 COPY src /home/vessel_detection/src
 COPY main.py /home/vessel_detection/main.py
 COPY tests /home/vessel_detection/src/
