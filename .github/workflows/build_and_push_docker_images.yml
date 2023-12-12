@@ -4,8 +4,8 @@ on:
   push:
 
 env:
-  GHCR: ghcr.io
-  GHCR_IMAGE_NAME: ${{ github.repository }}
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push-image:
