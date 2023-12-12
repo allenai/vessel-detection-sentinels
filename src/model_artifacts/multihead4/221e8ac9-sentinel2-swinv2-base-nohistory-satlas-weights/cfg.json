@@ -1,0 +1,122 @@
+{
+  "Architecture": "multihead4",
+  "Channels": [
+    {
+      "Count": 3,
+      "Name": "tci"
+    }
+  ],
+  "Data": {
+    "categories": "[\"vessel\"]",
+    "task": "point"
+  },
+  "DatasetID": 3,
+  "Name": "multihead4",
+  "Options": {
+    "Backbone": {
+      "Arch": "swin_v2_b",
+      "Name": "swin",
+      "Pretrained": true
+    },
+    "BatchSize": 3,
+    "ChipSize": 0,
+    "EffectiveBatchSize": 3,
+    "EncodeBackboneUseFPN": "true",
+    "EncoderBackbone": "swintransformer",
+    "EncoderBackboneVariant": "base",
+    "Evaluator": "per_class_f1",
+    "Freeze": [
+      "backbone.",
+      "intermediates."
+    ],
+    "GroupChannels": 3,
+    "Heads": [
+      {
+        "AnchorSizes": [
+          [
+            32
+          ],
+          [
+            64
+          ],
+          [
+            128
+          ],
+          [
+            256
+          ]
+        ],
+        "Name": "frcnn",
+        "UseLayers": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "ImageSize": 1024,
+    "Intermediates": [
+      {
+        "Name": "fpn"
+      }
+    ],
+    "NumChannels": 3,
+    "NumberEpochs": 15,
+    "Optimizer": {
+      "InitialLR": 0.0001,
+      "Name": "adam"
+    },
+    "RestorePath": "./satlas-model-v1-lowres-nohead.pth",
+    "Scheduler": {
+      "Cooldown": 10,
+      "Factor": 0.5,
+      "MinLR": 1e-06,
+      "Name": "plateau",
+      "Patience": 2
+    },
+    "SummaryFrequency": 2048,
+    "Tasks": [
+      {
+        "Metric": "f1",
+        "Name": "manual_vessels_v2",
+        "Task": {
+          "categories": [
+            "background",
+            "vessel"
+          ],
+          "mode": "custom",
+          "type": "detect"
+        }
+      }
+    ],
+    "TestSplits": [
+      "split7"
+    ],
+    "TrainSplits": [
+      "split2",
+      "split3",
+      "split4",
+      "split5",
+      "split6",
+      "train",
+      "train-bg",
+      "train2",
+      "train3",
+      "sargassum_train"
+    ],
+    "TrainTransforms": [
+      {
+        "CropTo": 512,
+        "HorizontalFlip": true,
+        "Name": "CropFlip",
+        "VerticalFlip": true
+      }
+    ],
+    "Unfreeze": 65536,
+    "ValSplits": [
+      "split1",
+      "sargassum_val"
+    ]
+  }
+}

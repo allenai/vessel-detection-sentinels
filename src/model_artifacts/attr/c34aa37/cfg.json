@@ -1,0 +1,61 @@
+{
+  "Architecture": "custom",
+  "Channels": [
+    {
+      "Count": 1,
+      "Name": "vh"
+    },
+    {
+      "Count": 1,
+      "Name": "vv"
+    }
+  ],
+  "Data": {
+    "task": "custom"
+  },
+  "DatasetID": 2,
+  "Name": "attr",
+  "Options": {
+    "BatchSize": 8,
+    "ChipSize": 0,
+    "Evaluator": "loss",
+    "ImageSize": 0,
+    "NumberEpochs": 80,
+    "Optimizer": {
+      "InitialLR": 0.0001,
+      "Name": "adam"
+    },
+    "Scheduler": {
+      "Factor": 0.5,
+      "Name": "plateau",
+      "Patience": 2
+    },
+    "SummaryFrequency": 8192,
+    "TrainSplits": [
+      "jan-march-may-2022-attrs-train",
+      "jun-july-aug-2022-attrs-train",
+      "apr-2022-attrs-train"
+    ],
+    "TrainTransforms": [
+      {
+        "CropTo": 120,
+        "HorizontalFlip": false,
+        "Name": "CropFlip",
+        "VerticalFlip": false
+      }
+    ],
+    "ValSplits": [
+      "jan-march-may-2022-attrs-val",
+      "jun-july-aug-2022-attrs-val",
+      "apr-2022-attrs-val"
+    ],
+    "ValTransforms": [
+      {
+        "CropTo": 120,
+        "HorizontalFlip": false,
+        "Name": "CropFlip",
+        "VerticalFlip": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Earth_Explorer_File xmlns="http://gs2.esa.int/DATA_STRUCTURE/olqcReport">
+    <Earth_Explorer_Header>
+        <Fixed_Header>
+            <File_Name>S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_GEOMETRIC_QUALITY_report.xml</File_Name>
+            <File_Description>Report produced by OLQC-SC</File_Description>
+            <Notes></Notes>
+            <Mission>S2A</Mission>
+            <File_Class>OPER</File_Class>
+            <File_Type>REP_OLQCPA</File_Type>
+            <Validity_Period>
+                <Validity_Start>UTC=2022-08-30T00:25:00</Validity_Start>
+                <Validity_Stop>UTC=2100-01-01T00:00:00</Validity_Stop>
+            </Validity_Period>
+            <File_Version>2</File_Version>
+            <Source>
+                <System>OLQC-SC</System>
+                <Creator>OLQC-SC</Creator>
+                <Creator_Version>06.01.00</Creator_Version>
+                <Creation_Date>UTC=2023-08-04T07:15:56</Creation_Date>
+            </Source>
+        </Fixed_Header>
+    </Earth_Explorer_Header>
+    <Data_Block type="xml">
+        <report gippVersion="1.0" globalStatus="PASSED" date="2023-08-04T07:15:56.685Z">
+            <checkList>
+                <parentID>S2A_OPER_GIP_OLQCPA_MPC__20220715T000042_V20220830T002500</parentID>
+                <name>GEOMETRIC_QUALITY</name>
+                <version>1.0</version>
+                <item url="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/" className="PDI Level 1C Datastrip Folder" name="S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09" class="http://www.esa.int/s2#pdi_level_1c_datastrip_container"/>
+                <check>
+                    <inspection creation="2023-08-04T07:15:55.115Z" duration="1493" execution="2023-08-04T07:15:55.158Z" id="Attitude_Quality_Indicator_Corrected" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check the admissibility of Corrected Attitude Quality Indicator. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">No wrong corrected attitude indicators were found.</message>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:56.839Z" duration="68" execution="2023-08-04T07:15:56.845Z" id="Absolute_Location_Value" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check the absolute Location value. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">Absolute location is valid (20.0&lt;30.0) </message>
+                    <extraValues>
+                        <value name="VALUE">20.0</value>
+                        <value name="EXPECTED">30.0</value>
+                    </extraValues>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:57.118Z" duration="1" execution="2023-08-04T07:15:57.160Z" id="Planimetric_Stability" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check the planimetric stability value  " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">Planimetric stability is valid (3.0&lt;5.0) </message>
+                    <extraValues>
+                        <value name="VALUE">3.0</value>
+                        <value name="EXPECTED">5.0</value>
+                    </extraValues>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:57.168Z" duration="1" execution="2023-08-04T07:15:57.236Z" id="Geometric_Refining_Spatio_Residual_Histograms" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check of the correctness of the Geometric Refining: Spatio Residual Histograms. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">Geometric Spatio Residual Histograms not computed.</message>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:57.308Z" duration="1" execution="2023-08-04T07:15:57.342Z" id="Geometric_Refining_Image_Refining" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check of the correctness of the Geometric Refining: Image Refining. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">Geometric image refining is correct.</message>
+                    <extraValues>
+                        <value name="X_MEAN">-0.018262</value>
+                        <value name="Y_MEAN">0.00811</value>
+                        <value name="X_STDV">4.047036</value>
+                        <value name="Y_STDV">5.099606</value>
+                    </extraValues>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:57.388Z" duration="529" execution="2023-08-04T07:15:57.394Z" id="Attitude_Quality_Indicator_Raw" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check the admissibility of Raw Attitude Quality Indicator. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">No wrong raw attitude indicators were found.</message>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:58.000Z" duration="0" execution="2023-08-04T07:15:58.018Z" id="Geometric_Refining_Vnir_Swir_Registration" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check of the correctness of the Geometric Refining: VNIR/SWIR Registration. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">VNIR / SWIR bands have not been registered.</message>
+                </check>
+                <check>
+                    <inspection creation="2023-08-04T07:15:58.045Z" duration="0" execution="2023-08-04T07:15:58.051Z" id="Ephemeris_Quality" item="S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" itemURL="/mnt/nfs-l1-04/l1-processing/processing-id-36376-2023-08-04-05-56-10/TaskTable_20230804T055611/FORMAT_METADATA_DS_L1C/output/PDI_DS/S2A_OPER_MSI_L1C_DS_2APS_20230804T052642_S20230804T021840_N05.09/S2A_OPER_MTD_L1C_DS_2APS_20230804T052642_S20230804T021840.xml" name="Check the ephemeris quality value. " priority="5" processingStatus="done" status="PASSED"/>
+                    <message contentType="text/plain">Ephemeris quality is valid (6.0&lt;=20.0) </message>
+                    <extraValues>
+                        <value name="VALUE">6.0</value>
+                        <value name="EXPECTED">20.0</value>
+                    </extraValues>
+                </check>
+            </checkList>
+        </report>
+    </Data_Block>
+</Earth_Explorer_File>

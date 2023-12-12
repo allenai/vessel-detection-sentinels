@@ -1,3 +1,8 @@
 *.pyc
 .vscode
 .env
+**/**/.DS_Store
+**/**/nohup.out
+**/.ipynb_checkpoints/
+**/.venv/
+**/*.ipynb
