@@ -16,8 +16,8 @@ import yaml
 from fastapi import FastAPI, Response
 from pydantic import BaseModel
 
-from src.data.image import prepare_scenes
-from src.inference.pipeline import detect_vessels
+from data.image import prepare_scenes
+from inference.pipeline import detect_vessels
 
 app = FastAPI()
 
