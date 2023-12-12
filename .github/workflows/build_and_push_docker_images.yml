@@ -58,20 +58,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract GCR metadata (tags, labels) for Docker vessel-detection
+      - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.GCR }}/${{ env.GCR_IMAGE_NAME }}/vessel-detection
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=sha,format=short
-            type=raw,value=latest
+            type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push Docker image vessel-detection to GCR
+      - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
