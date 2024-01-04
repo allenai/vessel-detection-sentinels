@@ -1,18 +1,5 @@
 """ Use this script to inference the API with locally stored data
 
-This is the docker command that was used before the API was created:
-
-docker run --shm-size 16G --gpus='"device=0"' \
--v /path/to/your/data:/home/vessel_detection/data vessel-detection:$IMAGE_TAG \
---raw_path=/home/vessel_detection/data/ \
---scratch_path=/home/vessel_detection/data/scratch/ \
---output=/home/vessel_detection/data/output/ \
---detector_model_dir=/home/vessel_detection/data/models/frcnn_cmp2/3dff445 \
---postprocess_model_dir=/home/vessel_detection/data/models/attr/c34aa37 \
---historical1=S1B_IW_GRDH_1SDV_20211118T025212_20211118T025237_029636_03896D_FCBE.SAFE \
---historical2=S1B_IW_GRDH_1SDV_20211106T025212_20211106T025237_029461_03840B_6E73.SAFE \
---scene_id=S1B_IW_GRDH_1SDV_20211130T025211_20211130T025236_029811_038EEF_D350.SAFE \
---conf=.9 --nms_thresh=10 --save_crops=True --catalog=sentinel1
 
 """
 import json

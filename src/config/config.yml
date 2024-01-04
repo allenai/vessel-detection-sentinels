@@ -1,0 +1,8 @@
+main:
+  sentinel2_detector: "/home/vessel_detection/src/model_artifacts/multihead4/221e8ac9-sentinel2-swinv2-base-nohistory-satlas-weights"
+  sentinel2_postprocessor: "/home/vessel_detection/src/model_artifacts/attr/2feb47b-sentinel2-attr-resnet-tci-IR"
+  sentinel1_detector: "/home/vessel_detection/src/model_artifacts/frcnn_cmp2/3dff445"
+  sentinel1_postprocessor: "/home/vessel_detection/src/model_artifacts/attr/c34aa37"
+
+pipeline:
+  CLOUD_MASK_THRESHOLD: 0.5
