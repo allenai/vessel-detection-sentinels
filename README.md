@@ -273,9 +273,7 @@ To use the docker image:
 1.  Build the docker image.
 
     ```bash
-    export GIT_HASH=$(git rev-parse --short HEAD)
-    export IMAGE_TAG=$GIT_HASH
-    docker build . -f dockerfile -t vessel-detection-sentinels:$IMAGE_TAG
+    docker build . -f Dockerfile -t vessel-detection-sentinels
     ```
 
 2.  Create a [Copernicus Hub](https://scihub.copernicus.eu/dhus/#/home) account, and export your user credentials:
