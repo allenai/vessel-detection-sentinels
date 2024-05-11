@@ -2,29 +2,14 @@
 
 This repository provides tools that can be used to detect vessels in
 synthetic aperture radar (SAR) imagery produced by the Sentinel-1 satellite constellation, and electro-optical (EO)
-and infrared (IR) imagery produced by the Sentinel-2 satellite constellation. The inference pipeline
-provided produces predictions for the centers of detected vessels, as well as predictions
-for a set of numerical and categorical attributes associated with each vessel, including length,
-width, speed, and heading. It can be run as desired on Sentinel-1 or Sentinel-2 images via a single,
-consistent interface.
+and infrared (IR) imagery produced by the Sentinel-2 satellite constellation. See: 
+[Satellite Imagery and AI: A New Era in Ocean Conservation, from Research to Deployment and Impact](https://arxiv.org/abs/2312.03207)
 
-Specifically, the models and inference script here are designed to perform inference on either:
-
-- Sentinel-1 products acquired via the [Interferometric Wide Swath
-  acquisition mode](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath), in the [Level-1 GRD product type](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-1-sar/product-types-processing-levels), and containing VV and VH polarization channels.
-
-- Sentinel-2 [MultiSpectral Image (MSI)](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi) products in the
-  [L1C product type](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/product-types). The models we are delivering only make use of the TCI, 8, 11, and 12 bands of the underlying Sentinel-2 imagery.
-
-<br>
-
-## Notes
-
-This is the first planned release of these models. We anticipate further updates near term, including releasing the entire datasets (for both S1 and S2), and released upgrades to the models as we discover performance issues in our staging environment. Note that we ship these models into production for Skylight.
+These models run at global scale in production in [Skylight](https://www.skylight.global/), a free maritime intellignece platform that supports ocean conservation efforts worldwide.  
 
 ## **Dataset**
 
-The annotations are included in data/metadata.sqlite3 with the following schema
+The annotations are included in data/metadata.sqlite3 with the following schema. The raw data are intended to be downloaded from source (ESA), via the included download scipts. 
 
 ### Metadata Schema
 
